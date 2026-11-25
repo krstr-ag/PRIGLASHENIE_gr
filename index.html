@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0610">
+<meta name="format-detection" content="telephone=no">
+<title>Группы · Марсианин · 25 ноября</title>
+<style>
+  @font-face{font-family:'Marck Script';font-style:normal;font-weight:400;font-display:swap;
+    src:local('Marck Script'),local('Snell Roundhand'),local('Segoe Script')}
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%}
+  body{
+    background:
+      radial-gradient(1100px 760px at 78% -12%,rgba(198,84,50,.26),transparent 62%),
+      radial-gradient(980px 680px at 6% 108%,rgba(93,47,130,.22),transparent 62%),
+      radial-gradient(900px 600px at 96% 104%,rgba(198,82,38,.18),transparent 65%),
+      linear-gradient(180deg,#070611 0%,#090713 42%,#0b0610 100%);
+    color:#f6e7d6;
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100svh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:36px 16px calc(36px + env(safe-area-inset-bottom));
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 20px 30px,#fff,transparent),
+      radial-gradient(1px 1px at 78px 52px,#ffd9c8,transparent),
+      radial-gradient(1.2px 1.2px at 132px 18px,#fff,transparent),
+      radial-gradient(1px 1px at 186px 76px,#fff,transparent),
+      radial-gradient(1.4px 1.4px at 34px 116px,#ffd9c8,transparent),
+      radial-gradient(1px 1px at 104px 142px,#fff,transparent),
+      radial-gradient(1.1px 1.1px at 158px 108px,#fff,transparent),
+      radial-gradient(1.6px 1.6px at 222px 148px,#ffd9c8,transparent);
+    background-size:260px 180px;opacity:.75;
+    animation:twinkle 7s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle{from{opacity:.45}to{opacity:.9}}
+  .wrap{position:relative;z-index:1;width:100%;max-width:560px}
+  .kicker{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(246,231,214,.48);text-align:center}
+  h1{
+    font-family:'Marck Script','Snell Roundhand','Segoe Script',cursive;
+    font-weight:400;font-size:clamp(34px,9vw,56px);line-height:1;margin:10px 0 6px;text-align:center;
+    background:linear-gradient(135deg,#ffb489,#e2683c 55%,#c0451f);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 6px 22px rgba(226,104,60,.35));
+  }
+  .sub{font-size:12.5px;line-height:1.5;color:rgba(246,231,214,.55);text-align:center;margin:0 0 26px}
+  .list{display:flex;flex-direction:column;gap:12px}
+  .card{
+    display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;
+    padding:16px 18px;border-radius:14px;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,rgba(255,250,241,.07),rgba(255,250,241,.03));
+    border:1px solid rgba(255,180,150,.18);
+    box-shadow:0 14px 34px rgba(0,0,0,.35);
+    transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
+  }
+  .card::after{
+    content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+    background:radial-gradient(80% 120% at 100% 0%,rgba(255,122,77,.16),transparent 62%);
+    opacity:0;transition:opacity .2s ease;
+  }
+  .card:hover,.card:focus-visible{
+    transform:translateY(-3px);border-color:rgba(255,150,102,.5);
+    background:linear-gradient(160deg,rgba(255,150,102,.14),rgba(255,250,241,.03));
+    box-shadow:0 20px 44px rgba(0,0,0,.45);
+    outline:none;
+  }
+  .card:hover::after,.card:focus-visible::after{opacity:1}
+  .avatar{
+    flex:0 0 auto;width:52px;height:52px;border-radius:50%;overflow:hidden;display:grid;place-items:center;
+    font-family:"Georgia","Times New Roman",serif;font-weight:600;font-size:14px;letter-spacing:.04em;color:#2a0f08;
+    background:radial-gradient(circle at 34% 28%,#ffb489,#e2683c 60%,#a33a20);
+    box-shadow:0 6px 16px rgba(208,69,31,.4),inset 0 0 0 1px rgba(255,220,200,.35);
+    padding:2px;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;background:#2a120d}
+  .who{min-width:0;flex:1 1 auto}
+  .who b{display:block;font-size:11.5px;font-weight:500;line-height:1.35;letter-spacing:.02em;color:rgba(255,178,142,.88)}
+  .who i{display:block;font-style:normal;font-size:11.5px;line-height:1.35;letter-spacing:.02em;color:rgba(246,231,214,.5);margin-top:3px}
+  .who span{display:block;font-size:14.5px;font-weight:600;line-height:1.32;letter-spacing:.01em;color:#f6e7d6;margin-top:3px}
+  .arrow{flex:0 0 auto;color:rgba(255,150,102,.75);font-size:18px;transition:transform .18s ease}
+  .card:hover .arrow{transform:translateX(4px)}
+  .list-title{margin:0 0 10px;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgba(246,231,214,.42);text-align:center}
+  .list-title.next{margin-top:28px}
+  .foot{margin-top:26px;text-align:center;font-size:11px;color:rgba(246,231,214,.34);line-height:1.6}
+  .foot a{color:rgba(255,178,142,.7);text-decoration:none;border-bottom:1px solid rgba(255,178,142,.3)}
+  .foot a:hover{color:#ffd0b8}
+  @media (max-width:420px){
+    .card{padding:14px 14px;gap:11px}
+    .avatar{width:44px;height:44px;font-size:18px}
+    .who span{font-size:13.5px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">фабрика студентов · 25 ноября</div>
+  <h1>Марсианин</h1>
+  <p class="sub">25 ноября · найдите свою группу — внутри приглашение и фото группы</p>
+
+  <div class="list-title">Группы · 1 курс</div>
+
+  <div class="list" id="list">
+    <a class="card" href="1a/">
+      <span class="avatar">1А</span>
+      <span class="who"><b>Классный руководитель · Арзамасова Анна Владимировна</b><span>Группа 1А</span>
+        <i>Коррекционная педагогика в начальном образовании</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1b/">
+      <span class="avatar">1Б</span>
+      <span class="who"><b>Классный руководитель · Малышева Дарья Сергеевна</b><span>Группа 1Б</span>
+        <i>Преподавание в начальных классах</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1d/">
+      <span class="avatar">1Д</span>
+      <span class="who"><b>Классный руководитель · Макаренко Рита Фадисовна</b><span>Группа 1Д</span>
+        <i>Дошкольное образование</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1r-1/">
+      <span class="avatar">1Р-1</span>
+      <span class="who"><b>Классный руководитель · Хусаинова Лилия Наилевна</b><span>Группа 1Р-1</span>
+        <i>Разработка и управление программным обеспечением</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1r-2/">
+      <span class="avatar">1Р-2</span>
+      <span class="who"><b>Классный руководитель · Халикова Ирина Рифовна</b><span>Группа 1Р-2</span>
+        <i>Разработка и управление программным обеспечением</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1pdo/">
+      <span class="avatar">1ПДО</span>
+      <span class="who"><b>Классный руководитель · Корнилова Сахаайа Валерьевна</b><span>Группа 1ПДО</span>
+        <i>Педагог дополнительного образования</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1tg-1/">
+      <span class="avatar">1ТГ-1</span>
+      <span class="who"><b>Классный руководитель · Сагитова Сабиля Фазулловна</b><span>Группа 1ТГ-1</span>
+        <i>Туризм и гостеприимство</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1tg-2/">
+      <span class="avatar">1ТГ-2</span>
+      <span class="who"><b>Классный руководитель · Файзуллина Арина Игоревна</b><span>Группа 1ТГ-2</span>
+        <i>Туризм и гостеприимство</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1td/">
+      <span class="avatar">1ТД</span>
+      <span class="who"><b>Классный руководитель · Абдрафикова Регина Салаватовна</b><span>Группа 1ТД</span>
+        <i>Торговое дело</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1pd-1/">
+      <span class="avatar">1ПД-1</span>
+      <span class="who"><b>Классный руководитель · Тибеева Айгуль Наэлевна</b><span>Группа 1ПД-1</span>
+        <i>Правоохранительная деятельность</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1pd-2/">
+      <span class="avatar">1ПД-2</span>
+      <span class="who"><b>Классный руководитель · Пушкарева Анна Александровна</b><span>Группа 1ПД-2</span>
+        <i>Правоохранительная деятельность</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1pd-3/">
+      <span class="avatar">1ПД-3</span>
+      <span class="who"><b>Классный руководитель · Маликова Эльвира Равилевна</b><span>Группа 1ПД-3</span>
+        <i>Правоохранительная деятельность</i></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1e/">
+      <span class="avatar">1Э</span>
+      <span class="who"><b>Классный руководитель · Богаткина Марина Александровна</b><span>Группа 1Э</span></span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="card" href="1p/">
+      <span class="avatar">1П</span>
+      <span class="who"><b>Классный руководитель · Богданова Лилия Шафкатовна</b><span>Группа 1П</span></span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <p class="foot">Открывается в любом браузере, интернет не нужен.</p>
+</div>
+</body>
+</html>
